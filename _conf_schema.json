@@ -1,9 +1,54 @@
 {
-    "deepinfra_api_key": {
-        "description": "DeepInfra API密钥",
+    "model_type": {
+        "description": "选择AI模型类型",
         "type": "string",
-        "hint": "在 DeepInfra 平台获取的 API 密钥",
-        "obvious_hint": true
+        "hint": "选择要使用的AI模型类型",
+        "options": ["deepseek", "gemini"],
+        "default": "deepseek"
+    },
+    "deepseek_config": {
+        "description": "DeepSeek模型配置",
+        "type": "object",
+        "hint": "DeepSeek模型的相关配置",
+        "items": {
+            "api_key": {
+                "description": "DeepSeek API密钥",
+                "type": "string",
+                "hint": "DeepSeek API 密钥",
+                "obvious_hint": true
+            },
+            "base_url": {
+                "description": "API基础URL",
+                "type": "string",
+                "hint": "API服务器地址",
+                "default": "https://api.deepinfra.com/v1/openai"
+            },
+            "model": {
+                "description": "模型名称",
+                "type": "string",
+                "hint": "DeepSeek模型名称",
+                "default": "deepseek-ai/DeepSeek-R1"
+            }
+        }
+    },
+    "gemini_config": {
+        "description": "Gemini模型配置",
+        "type": "object",
+        "hint": "Gemini模型的相关配置",
+        "items": {
+            "api_key": {
+                "description": "Gemini API密钥",
+                "type": "string",
+                "hint": "Gemini API 密钥",
+                "obvious_hint": true
+            },
+            "model": {
+                "description": "模型名称",
+                "type": "string",
+                "hint": "Gemini模型名称",
+                "default": "gemini-2.0-flash"
+            }
+        }
     },
     "system_message": {
         "description": "AI系统角色设定",
@@ -12,9 +57,9 @@
         "default": "你是一个有帮助的AI助手，请用简洁明了的方式回答问题。"
     },
     "model_settings": {
-        "description": "模型配置",
+        "description": "模型通用配置",
         "type": "object",
-        "hint": "AI模型的相关参数设置",
+        "hint": "AI模型的通用参数设置",
         "items": {
             "temperature": {
                 "description": "温度参数",
