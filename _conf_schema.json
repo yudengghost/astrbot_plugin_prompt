@@ -1,0 +1,33 @@
+{
+    "deepinfra_api_key": {
+        "description": "DeepInfra API密钥",
+        "type": "string",
+        "hint": "在 DeepInfra 平台获取的 API 密钥",
+        "obvious_hint": true
+    },
+    "system_message": {
+        "description": "AI系统角色设定",
+        "type": "string",
+        "hint": "设置AI助手的角色和行为方式",
+        "default": "你是一个有帮助的AI助手，请用简洁明了的方式回答问题。"
+    },
+    "model_settings": {
+        "description": "模型配置",
+        "type": "object",
+        "hint": "AI模型的相关参数设置",
+        "items": {
+            "temperature": {
+                "description": "温度参数",
+                "type": "float",
+                "hint": "控制输出的随机性(0.0-1.0)",
+                "default": 0.7
+            },
+            "max_tokens": {
+                "description": "最大令牌数",
+                "type": "int",
+                "hint": "回复的最大长度",
+                "default": 4096
+            }
+        }
+    }
+}
