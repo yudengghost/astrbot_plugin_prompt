@@ -20,6 +20,8 @@ class MyPlugin(Star):
         """使用AI模型生成回复的提示词命令"""
         # 获取用户消息
         user_message = event.message_str
+
+        yield event.plain_result("收到了，请稍候🥸...")
         
         try:
             # 创建聊天完成请求
