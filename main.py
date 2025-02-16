@@ -7,7 +7,7 @@ import json
 import os
 import re
 
-@register("prompt", "yudengghost", "AI提示词助手插件", "1.0.0", "repo url")
+@register("prompt", "yudengghost", "AI提示词助手插件", "1.0.0", "https://github.com/yudengghost/astrbot_plugin_prompt")
 class MyPlugin(Star):
     def __init__(self, context: Context, config: dict):
         super().__init__(context)
